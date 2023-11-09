@@ -1,0 +1,26 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('./styles/fonts/Roboto-Regular.ttf') format('ttf'),
+  url('./styles/fonts/Roboto-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('./styles/fonts/gotham_condensed_light.otf') format('otf'),
+  url('./fonts/gotham_condensed_light.otf');
+}
+@font-face {
+  font-family: 'Gotham-Book';
+  src: url('./gotham_condensed_book.otf') format('otf'),
+  url('./gotham_condensed_book.otf');
+}
+@font-face {
+  font-family: 'Gotham-Bold';
+  src: url('apps/poc-vite/src/styles/fonts/gotham_condensed_bold.otf') format('otf'),
+  url('apps/poc-vite/src/styles/fonts/gotham_condensed_bold.otf');
+}
+@font-face {
+  font-family: 'Gotham-Medium';
+  src: url('apps/poc-vite/src/styles/fonts/gotham_condensed_medium.otf') format('otf'),
+  url('apps/poc-vite/src/styles/fonts/gotham_condensed_medium.otf');
+}

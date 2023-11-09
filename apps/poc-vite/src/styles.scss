@@ -1,1 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'styles/_all';
+
+body {
+  font-family: Roboto, Gotham;
+
+  table {
+    @apply w-full text-sm text-left text-gray-500 dark:text-gray-400;
+
+    thead {
+      @apply text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400;
+      td {
+        @apply px-4 py-3 font-bold text-center;
+      }
+    }
+
+    tbody {
+      tr {
+        @apply border-b dark:border-gray-700;
+        td {
+          @apply px-4 py-3 text-center;
+        }
+      }
+    }
+  }
+}

@@ -72,6 +72,49 @@
       "options": {
         "buildTarget": "poc-vite:build"
       }
+    },
+    "storybook": {
+      "executor": "@nx/storybook:storybook",
+      "options": {
+        "port": 4400,
+        "configDir": "apps/poc-vite/.storybook"
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@nx/storybook:build",
+      "outputs": ["{options.outputDir}"],
+      "options": {
+        "outputDir": "dist/storybook/poc-vite",
+        "configDir": "apps/poc-vite/.storybook"
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "test-storybook": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "test-storybook -c apps/poc-vite/.storybook --url=http://localhost:4400"
+      }
+    },
+    "static-storybook": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "poc-vite:build-storybook",
+        "staticFilePath": "dist/storybook/poc-vite"
+      },
+      "configurations": {
+        "ci": {
+          "buildTarget": "poc-vite:build-storybook:ci"
+        }
+      }
     }
   },
   "tags": []

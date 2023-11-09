@@ -2,10 +2,16 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
+import { fileURLToPath, URL } from 'node:url'
+
 
 export default defineConfig({
   cacheDir: '../../node_modules/.vite/poc-vite',
-
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+    }
+  },
   server: {
     port: 4200,
     host: 'localhost',
